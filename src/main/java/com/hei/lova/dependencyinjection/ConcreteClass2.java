@@ -1,11 +1,15 @@
 package com.hei.lova.dependencyinjection;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class ConcreteClass2 extends AbstractClass1 {
-    private ConcreteClass2(ConcreteDependance1 concreteDependance1, ConcreteDependance2 concreteDependance2) {
-        super(concreteDependance1, concreteDependance2);
+
+    public ConcreteClass2(ConcreteDependance1 dep1, ConcreteDependance2 dep2) {
+        super(dep1, dep2);
+    }
+
+    public ConcreteClass2() {
+        super(new ConcreteDependance1(), new ConcreteDependance2());
     }
 }
